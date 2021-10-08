@@ -13,7 +13,6 @@ document.getElementById("res").innerHTML=0+ " - "+ 0;
 
 
 }
-
 function val(){
 document.getElementById("longcat1").value++;
 var x=document.getElementById("longcat1").value;
@@ -44,7 +43,6 @@ document.getElementById("res").innerHTML=s1+" - " +s2;
         document.getElementById("res").innerHTML= s1 + " - " + s2;
     }
 }
-
 document.addEventListener("DOMContentLoaded",function(){
 	let longcat1 = new LongcatRange("#longcat1"),
 		tacgnol1 = new LongcatRange("#tacgnol1",true),
