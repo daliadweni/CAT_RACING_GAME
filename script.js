@@ -44,9 +44,7 @@ document.getElementById("res").innerHTML=s1+" - " +s2;
         document.getElementById("res").innerHTML= s1 + " - " + s2;
     }
 }
-document.getElementById("woue1").addEventListener("click",val2);
 
-document.getElementById("woue2").addEventListener("click",val);
 document.addEventListener("DOMContentLoaded",function(){
 	let longcat1 = new LongcatRange("#longcat1"),
 		tacgnol1 = new LongcatRange("#tacgnol1",true),
