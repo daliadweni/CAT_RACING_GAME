@@ -2,10 +2,7 @@ var s1=0;
 var s2=0;
 var person = prompt("name of first player");
 var person2 = prompt("name of second player");
-let buttons = document.querySelectorAll('.your.button.selector');
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].click();
-}
+
 function players(){
    
 document.getElementById("p1").innerHTML=person.toUpperCase();
