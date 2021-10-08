@@ -13,8 +13,7 @@ document.getElementById("res").innerHTML=0+ " - "+ 0;
 
 
 }
-document.getElementById("play2").addEventListener("click",val2);
-document.getElementById("play1").addEventListener("click",val);
+
 function val(){
 document.getElementById("longcat1").value++;
 var x=document.getElementById("longcat1").value;
@@ -45,6 +44,9 @@ document.getElementById("res").innerHTML=s1+" - " +s2;
         document.getElementById("res").innerHTML= s1 + " - " + s2;
     }
 }
+document.getElementById("play2").addEventListener("click",val2);
+
+document.getElementById("play1").addEventListener("click",val);
 document.addEventListener("DOMContentLoaded",function(){
 	let longcat1 = new LongcatRange("#longcat1"),
 		tacgnol1 = new LongcatRange("#tacgnol1",true),
