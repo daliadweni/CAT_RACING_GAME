@@ -1,0 +1,192 @@
+// colors
+$w1: hsl(0,0%,100%);
+$w1T: hsla(0,0%,100%,0);
+$w2: hsl(0,0%,85%);
+$w2T: hsla(0,0%,85%,0);
+$bl: hsl(210,50%,75%);
+$blT: hsla(210,50%,75%,0);
+$gn: hsl(90,50%,75%);
+$gnT: hsla(90,50%,75%,0);
+$bk1: hsl(0,0%,10%);
+$bk1T: hsla(0,0%,10%,0);
+$bk2: hsl(0,0%,25%);
+$bk2T: hsla(0,0%,25%,0);
+$pk: hsl(0,60%,75%);
+$pkT: hsla(0,60%,75%,0);
+
+// mixins
+@mixin thumbBaseProps() {
+	background-repeat: no-repeat;
+	border: 0;
+	width: 2em;
+	height: 2.5em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+@mixin catHead($headColor,$shadowColor,$eyeColor) {
+	$headColorT: fade-out($headColor,1);
+	$shadowColorT: fade-out($shadowColor,1);
+	$eyeColorT: fade-out($eyeColor,1);
+	background:
+		// right eye
+		radial-gradient(0.2em 0.4em at 0.75em 0.875em,$bk1 45%,$bk1T 50%),
+		radial-gradient(0.5em 0.5em at 0.75em 0.875em,$eyeColor 47%,$eyeColorT 50%),
+		// left eye
+		radial-gradient(0.2em 0.4em at 1.5em 0.875em,$bk1 45%,$bk1T 50%),
+		radial-gradient(0.5em 0.5em at 1.5em 0.875em,$eyeColor 47%,$eyeColorT 50%),
+		// mouth
+		radial-gradient(0.45em 0.4em at 0.875em 1.325em,$headColor 47%,$headColorT 50%),
+		radial-gradient(0.45em 0.4em at 1.375em 1.325em,$headColor 47%,$headColorT 50%),
+		radial-gradient(0.5em 0.4em at 0.925em 1.375em,$shadowColor 47%,$shadowColorT 50%),
+		radial-gradient(0.5em 0.4em at 1.325em 1.375em,$shadowColor 47%,$shadowColorT 50%),
+		// nose
+		radial-gradient(0.375em 0.375em at 1.125em 1.25em,$pk 47%,$pkT 50%),
+		// head
+		radial-gradient(2em 1.5em at 50% 1em,$headColor 47%,$headColorT 50%),
+		radial-gradient(2em 1.5em at 50% 1.1em,$shadowColor 47%,$shadowColorT 50%),
+		// ears
+		radial-gradient(0.5em 1.5em at 0.375em 0.75em,$pk 39%,$headColor 40% 48%,$headColorT 50%),
+		radial-gradient(0.5em 1.5em at 1.5em 0.75em,$pk 39%,$headColor 40% 48%,$headColorT 50%),
+		// paws
+		radial-gradient(0.5em 1.75em at 0.25em 1.5em,$headColor 47%,$headColorT 50%),
+		radial-gradient(0.5em 1.75em at 0.25em 1.6em,$shadowColor 47%,$shadowColorT 50%),
+		radial-gradient(0.5em 1.75em at 0.65em 1.6em,$shadowColor 47%,$shadowColorT 50%);
+	@include thumbBaseProps();
+}
+@mixin catTorso($torsoColor,$shadowColor) {
+	$torsoColorT: fade-out($torsoColor,1);
+	$shadowColorT: fade-out($shadowColor,1);
+	box-shadow: 0 -0.25em 0 $shadowColor inset;
+	&, &:before {
+		background-color: $torsoColor;
+	}
+	&:before {
+		box-shadow: 0 -0.1em 0 $shadowColor inset;
+	}
+	&:after {
+		background:
+			// legs
+			radial-gradient(0.5em 1.75em at 0.25em -0.1em,$torsoColor 47%,$torsoColorT 50%),
+			radial-gradient(0.5em 1.75em at 0.25em 0,$shadowColor 47%,$shadowColorT 50%),
+			radial-gradient(0.5em 1.75em at 0.65em 0,$shadowColor 47%,$shadowColorT 50%);
+		background-repeat: no-repeat;
+	}
+}
+
+// normal styles
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(20px + (30 - 20) * (100vw - 320px) / (1280 - 320));
+}
+body, input {
+	font: 1em/1.5 Oswald, Impact, sans-serif;
+}
+body {
+	background: hsl(58,44.7%,50.4%);
+	color: $bk1;
+	display: flex;
+	height: 100vh;
+}
+form {
+	margin: auto;
+	padding: 1.5em 0;
+}
+.longcat {
+	margin-bottom: 0.5em;
+	position: relative;
+	width: 9em;
+	height: 4em;
+	&__torso, &__torso:before, &__torso:after, &__input, &__value, &__sr {
+		position: absolute;
+	}
+	&__torso, &__torso:before, &__torso:after {
+		content: "";
+		display: block;
+	}
+	&__torso {
+		border-radius: 0.5em 0 0.25em 0;
+		top: 0.875em;
+		height: 1em;
+		&, &:after {
+			left: 0;
+		}
+		&:before {
+			border-radius: 0.5em;
+			top: 0;
+			left: -1em;
+			width: 1.5em;
+			height: 0.25em;
+			transform: rotate(-40deg) {
+				origin: 1.375em 0.125em;
+			}
+			transition: transform 0.25s ease-in-out;
+			z-index: -1;
+		}
+		&:after {
+			top: 0.75em;
+			width: 1em;
+			height: 0.875em;
+		}
+	}
+	&__input {
+		background-color: transparent;
+		box-shadow: 1px 0 0 $bk2;
+		cursor: pointer;
+		height: 2.5em;
+		width: 100%;
+		z-index: 1;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		-webkit-tap-highlight-color: transparent;
+		&:focus {
+			outline: transparent;
+		}
+		&::-moz-focus-outer {
+			border: 0;
+		}
+	}
+	&__input:active + &__torso:before, &__input:focus + &__torso:before {
+		transform: rotate(15deg);
+	}
+	&__value {
+		top: 2.5em;
+		left: 0;
+		text-align: center;
+		width: 100%;
+	}
+	&__sr {
+		clip: rect(1px,1px,1px,1px);
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+	}
+	&--light &__torso {
+		@include catTorso($w1,$w2);
+	}
+	&--light &__input {
+		&::-webkit-slider-thumb {
+			@include catHead($w1,$w2,$bl);
+		}
+		&::-moz-range-thumb {
+			@include catHead($w1,$w2,$bl);
+		}
+	}
+	&--dark &__torso {
+		@include catTorso($bk2,$bk1);
+	}
+	&--dark &__input {
+		&::-webkit-slider-thumb {
+			@include catHead($bk2,$bk1,$gn);
+		}
+		&::-moz-range-thumb {
+			@include catHead($bk2,$bk1,$gn);
+		}
+	}
+}

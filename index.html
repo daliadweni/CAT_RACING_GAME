@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">    
+    <meta charset="UTF-8">
+
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/png" href="cut.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" rel="stylesheet"> 
+    <title>Course Game </title>
+</head>
+<body onload="players()">
+    <!--- nav ----->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img src="cut.png" width="35" height="35">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              
+            </a>
+      
+            <a class="navbar-item">
+              
+            </a>
+      
+            
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" HREF="mailto:mouhamedaliadoinii@gmail.com">
+                  <strong>Contact me</strong>
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--- /NAV -->
+      <section class="section">
+        <div class="columns is-gapless">
+            <form>
+           <center>    <label id="p1" ></label></center>
+                <input type="range" id="longcat1" name="longcat1" min=0 max=100 value=0 disabled>
+                <br>
+               
+                <center><label  id="p2" ></label></center>
+                <input type="range" id="tacgnol2" name="tacgnol2" min=0 max=100 value=0 disabled>
+               
+            </form>                 
+            <br>
+     
+                    
+            
+             
+
+
+</div>
+<center>
+<button class="button is-info" onclick="val()"><i class="fa fa-plus" aria-hidden="true">  </i><p>اجري</p> </button>
+<button  class="button is-info" onclick="val2()"><i class="fa fa-plus" aria-hidden="true">  </i> <p>اجري</p> </button>
+<h1 style="font-size: 50px;">SCORE : </h1><br><br>
+<h1 id="s1"  style="font-size: 30px;" ></h1> <h1 id="res"  style="font-size: 80px;"></h1> <h1  style="font-size: 30px;" id="s2"></h1>
+<br><br><br><br>
+
+<br>
+<h2 class="pad1 has-text-centered is-size-6" style="color: white;">Created By Mohamed Ali Adweni</h2>
+
+</center>
+
+      </section>
+      
+
+    
+</body>
+</html>
