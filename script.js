@@ -14,13 +14,13 @@ document.getElementById("res").innerHTML=0+ " - "+ 0;
 
 
 }
-function val(){
+setInterval(function val(){
 document.getElementById("longcat1").value++;
 var x=document.getElementById("longcat1").value;
 var y=document.getElementById("tacgnol2").value;
 
 verif(x,y);
-}
+},1000);
 function val2(){
     document.getElementById("tacgnol2").value++;
 var x1=document.getElementById("longcat1").value;
