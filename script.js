@@ -2,7 +2,10 @@ var s1=0;
 var s2=0;
 var person = prompt("name of first player");
 var person2 = prompt("name of second player");
-
+let buttons = document.querySelectorAll('.your.button.selector');
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].click();
+}
 function players(){
    
 document.getElementById("p1").innerHTML=person.toUpperCase();
@@ -14,20 +17,20 @@ document.getElementById("res").innerHTML=0+ " - "+ 0;
 
 
 }
-setInterval(function val(){
+function val(){
 document.getElementById("longcat1").value++;
 var x=document.getElementById("longcat1").value;
 var y=document.getElementById("tacgnol2").value;
 
 verif(x,y);
-},1000);
-setInterval(function val2(){
+}
+function val2(){
     document.getElementById("tacgnol2").value++;
 var x1=document.getElementById("longcat1").value;
 var y1=document.getElementById("tacgnol2").value;
 
 verif(x1,y1);
-    },1000);
+    }
 function verif(v1,v2){
     if(v1==100 && v2!=100){
         alert("GREAAAT"+person.toUpperCase()+" IS WINNNN ");
