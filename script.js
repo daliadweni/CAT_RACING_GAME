@@ -21,13 +21,13 @@ var y=document.getElementById("tacgnol2").value;
 
 verif(x,y);
 },1000);
-function val2(){
+setInterval(function val2(){
     document.getElementById("tacgnol2").value++;
 var x1=document.getElementById("longcat1").value;
 var y1=document.getElementById("tacgnol2").value;
 
 verif(x1,y1);
-    }
+    },1000);
 function verif(v1,v2){
     if(v1==100 && v2!=100){
         alert("GREAAAT"+person.toUpperCase()+" IS WINNNN ");
