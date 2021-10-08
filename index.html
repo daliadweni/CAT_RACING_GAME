@@ -1,18 +1,20 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">    
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
     <link rel="icon" type="image/png" href="cut.ico" />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" rel="stylesheet"> 
-    <title>Course Game </title>
+    <title>Cat Game </title>
 </head>
 <body onload="players()">
     <!--- nav ----->
@@ -75,12 +77,17 @@
 
 </div>
 <center>
-<button onclick="val()" class="button is-info" ><i class="fa fa-plus" aria-hidden="true">  </i><p>اجري</p> </button>
-<button onclick="val2()"  class="button is-info"><i  class="fa fa-plus" aria-hidden="true">  </i> <p>اجري</p> </button>
+  
+<button class="button is-info" id="id1"><i class="fa fa-plus" aria-hidden="true">  </i><p>اجري</p> </button>
+<button  class="button is-info" id="id2"><i class="fa fa-plus" aria-hidden="true">  </i> <p>اجري</p> </button>
 <h1 style="font-size: 50px;">SCORE : </h1><br><br>
 <h1 id="s1"  style="font-size: 30px;" ></h1> <h1 id="res"  style="font-size: 80px;"></h1> <h1  style="font-size: 30px;" id="s2"></h1>
 <br><br><br><br>
+<script>
+  document.getElementById("id1").addEventListener('click',val); 
+  document.getElementById("id2").addEventListener('click',val2); 
 
+  </script>
 <br>
 <h2 class="pad1 has-text-centered is-size-6" style="color: white;">Created By Mohamed Ali Adweni</h2>
 
