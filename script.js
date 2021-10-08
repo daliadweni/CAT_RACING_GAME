@@ -2,6 +2,15 @@ var s1=0;
 var s2=0;
 var person = prompt("name of first player");
 var person2 = prompt("name of second player");
+$(function() {
+  var touchCount = 0;
+  
+  $('button').on({'touchstart':function(e) { 
+    e.preventDefault();
+    touchCount++
+    $('.count').text(touchCount);
+  }});
+});
 function players(){
    
 document.getElementById("p1").innerHTML=person.toUpperCase();
