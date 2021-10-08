@@ -13,6 +13,8 @@ document.getElementById("res").innerHTML=0+ " - "+ 0;
 
 
 }
+document.getElementById("play2").addEventListener("click",val2);
+document.getElementById("play1").addEventListener("click",val);
 function val(){
 document.getElementById("longcat1").value++;
 var x=document.getElementById("longcat1").value;
